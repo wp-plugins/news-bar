@@ -3,7 +3,7 @@
 	/*
 	  Plugin Name: News Bar
 	  Plugin URI: http://gndev.info/news-bar/
-	  Version: 1.0.0
+	  Version: 1.0.2
 	  Author: Vladimir Anokhin
 	  Author URI: http://gndev.info/
 	  Description: WordPress plugin
@@ -13,7 +13,7 @@
 	 */
 
 	/** Plugin version */
-	define( 'NB_PLUGIN_VERSION', '1.0.0' );
+	define( 'NB_PLUGIN_VERSION', '1.0.2' );
 
 	/** Plugin textdomain */
 	define( 'NB_TEXTDOMAIN', 'news-bar' );
