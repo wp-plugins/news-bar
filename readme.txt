@@ -4,7 +4,7 @@ Donate link: http://gndev.info/
 Tags: wordpress, plugin, news, ticker, news ticker, news bar, twitter, social, social icons, icon, icons, bar, toolbar, news ticker
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 News bar with latest tweets or posts from specified blog category
 

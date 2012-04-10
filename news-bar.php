@@ -3,17 +3,17 @@
 	/*
 	  Plugin Name: News Bar
 	  Plugin URI: http://gndev.info/news-bar/
-	  Version: 1.0.2
+	  Version: 1.0.3
 	  Author: Vladimir Anokhin
 	  Author URI: http://gndev.info/
-	  Description: WordPress plugin
+	  Description: News bar with latest tweets or posts from specified blog category
 	  Text Domain: news-bar
 	  Domain Path: /languages
 	  License: GPL2
 	 */
 
 	/** Plugin version */
-	define( 'NB_PLUGIN_VERSION', '1.0.2' );
+	define( 'NB_PLUGIN_VERSION', '1.0.3' );
 
 	/** Plugin textdomain */
 	define( 'NB_TEXTDOMAIN', 'news-bar' );
@@ -37,6 +37,13 @@
 
 		// Make plugin available for tramslation
 		load_plugin_textdomain( NB_TEXTDOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+		// Translate plugin meta
+		$translate = array(
+			__( 'News Bar', NB_TEXTDOMAIN ),
+			__( 'Vladimir Anokhin', NB_TEXTDOMAIN ),
+			__( 'News bar with latest tweets or posts from specified blog category', NB_TEXTDOMAIN ),
+		);
 	}
 
 	add_action( 'init', 'nb_plugin_init' );

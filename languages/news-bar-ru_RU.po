@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gn_themes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-10 18:46+0300\n"
-"PO-Revision-Date: 2012-04-10 18:47+0300\n"
+"POT-Creation-Date: 2012-04-10 19:50+0300\n"
+"PO-Revision-Date: 2012-04-10 19:51+0300\n"
 "Last-Translator: Vladimir Anokhin <ano.vladimir@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,15 +15,24 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ./functions\n"
 
-#: news-bar.php:48
+#: news-bar.php:43
+#: functions/backend.php:7
+msgid "News Bar"
+msgstr "Новостная панель"
+
+#: news-bar.php:44
+msgid "Vladimir Anokhin"
+msgstr "Владимир Анохин"
+
+#: news-bar.php:45
+msgid "News bar with latest tweets or posts from specified blog category"
+msgstr "Новостная панель с последними твитами или записями из выбранной категории"
+
+#: news-bar.php:55
 #: functions/backend.php:22
 #: functions/options.php:28
 msgid "Settings"
 msgstr "Настройки"
-
-#: functions/backend.php:7
-msgid "News Bar"
-msgstr "Новостная панель"
 
 #: functions/backend.php:21
 msgid "About"
@@ -154,14 +163,6 @@ msgstr "Твиттер"
 #: functions/options.php:58
 msgid "Blog category"
 msgstr "Категория блога"
-
-#: functions/options.php:41
-msgid "RSS feed"
-msgstr "RSS поток"
-
-#: functions/options.php:42
-msgid "Taxonomy"
-msgstr "Таксономия"
 
 #: functions/options.php:50
 msgid "Twitter username"
@@ -356,17 +357,9 @@ msgstr "Выберите тему для новостной панели"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: functions/options.php:257
-msgid "Custom skin"
-msgstr "Своя тема"
-
 #: functions/options.php:258
 msgid "Glass"
 msgstr "Стекло"
-
-#: functions/options.php:259
-msgid "Dark glass"
-msgstr "Темное стекло"
 
 #: functions/options.php:260
 msgid "Wood"
@@ -379,10 +372,6 @@ msgstr "Темное дерево"
 #: functions/options.php:262
 msgid "Aluminum"
 msgstr "Алюминий"
-
-#: functions/options.php:263
-msgid "Metal"
-msgstr "Металл"
 
 #: functions/options.php:271
 msgid "Custom skin settings"
@@ -504,3 +493,17 @@ msgstr "Загрузить"
 msgid "Enter the url"
 msgstr "Введите ссылку"
 
+#~ msgid "RSS feed"
+#~ msgstr "RSS поток"
+
+#~ msgid "Taxonomy"
+#~ msgstr "Таксономия"
+
+#~ msgid "Custom skin"
+#~ msgstr "Своя тема"
+
+#~ msgid "Dark glass"
+#~ msgstr "Темное стекло"
+
+#~ msgid "Metal"
+#~ msgstr "Металл"
