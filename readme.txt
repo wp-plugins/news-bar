@@ -1,4 +1,4 @@
-=== News Ticker ===
+=== News Bar ===
 Contributors: gn_themes
 Donate link: http://gndev.info/
 Tags: wordpress, plugin, news, ticker, news ticker, news bar, twitter, social, social icons, icon, icons, bar, toolbar, news ticker
