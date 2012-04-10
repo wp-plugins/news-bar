@@ -3,7 +3,7 @@
 	/*
 	  Plugin Name: News Bar
 	  Plugin URI: http://gndev.info/news-bar/
-	  Version: 1.0.3
+	  Version: 1.0.4
 	  Author: Vladimir Anokhin
 	  Author URI: http://gndev.info/
 	  Description: News bar with latest tweets or posts from specified blog category
@@ -13,7 +13,7 @@
 	 */
 
 	/** Plugin version */
-	define( 'NB_PLUGIN_VERSION', '1.0.3' );
+	define( 'NB_PLUGIN_VERSION', '1.0.4' );
 
 	/** Plugin textdomain */
 	define( 'NB_TEXTDOMAIN', 'news-bar' );
