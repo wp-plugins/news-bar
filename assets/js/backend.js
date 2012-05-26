@@ -5,58 +5,58 @@ jQuery(document).ready(function($) {
 	// ########## Tabs ##########
 
 	// Nav tab click
-	$('#nb-nav-tabs span').click(function(event) {
+	$('#gndev-plugin-nav-tabs span').click(function(event) {
 
 		// Hide tips
-		$('.nb-spin, .nb-success-tip').hide();
+		$('.gndev-plugin-spin, .gndev-plugin-success-tip').hide();
 
 		// Remove active class from all tabs
-		$('#nb-nav-tabs span').removeClass('nav-tab-active');
+		$('#gndev-plugin-nav-tabs span').removeClass('nav-tab-active');
 
 		// Hide all panes
-		$('.nb-nav-pane').hide();
+		$('.gndev-plugin-nav-pane').hide();
 
 		// Add active class to current tab
 		$(this).addClass('nav-tab-active');
 
 		// Show current pane
-		$('.nb-nav-pane:eq(' + $(this).index() + ')').show();
+		$('.gndev-plugin-nav-pane:eq(' + $(this).index() + ')').show();
 
 		// Save tab to cookies
-		createCookie( 'news_bar_settings_last_tab', $(this).index(), 100 );
+		createCookie( pagenow + '_last_tab', $(this).index(), 100 );
 	});
 
 	// Auto-open tab by link with hash
 	if ( strpos( document.location.hash, '#tab-' ) !== false )
-		$('#nb-nav-tabs span:eq(' + document.location.hash.replace('#tab-','') + ')').trigger('click');
+		$('#gndev-plugin-nav-tabs span:eq(' + document.location.hash.replace('#tab-','') + ')').trigger('click');
 
 	// Auto-open tab by cookies
-	else if ( readCookie( 'news_bar_settings_last_tab' ) != null )
-		$('#nb-nav-tabs span:eq(' + readCookie( 'news_bar_settings_last_tab' ) + ')').trigger('click');
+	else if ( readCookie( pagenow + '_last_tab' ) != null )
+		$('#gndev-plugin-nav-tabs span:eq(' + readCookie( pagenow + '_last_tab' ) + ')').trigger('click');
 
 
 	// ########## Ajaxed form ##########
 
-	$('#nb-options-form').ajaxForm({
+	$('#gndev-plugin-options-form').ajaxForm({
 		beforeSubmit: function() {
-			$('.nb-success-tip').hide();
-			$('.nb-spin').fadeIn(200);
-			$('.nb-submit').attr('disabled', true);
+			$('.gndev-plugin-success-tip').hide();
+			$('.gndev-plugin-spin').fadeIn(200);
+			$('.gndev-plugin-submit').attr('disabled', true);
 		},
 		success: function() {
-			$('.nb-spin').hide();
-			$('.nb-success-tip').show();
+			$('.gndev-plugin-spin').hide();
+			$('.gndev-plugin-success-tip').show();
 			setTimeout(function() {
-				$('.nb-success-tip').fadeOut(200);
+				$('.gndev-plugin-success-tip').fadeOut(200);
 			}, 2000);
-			$('.nb-submit').attr('disabled', false);
+			$('.gndev-plugin-submit').attr('disabled', false);
 		}
 	});
 
 
 	// ########## Reset settings confirmation ##########
 
-	$('.nb-reset').click(function() {
+	$('.gndev-plugin-reset').click(function() {
 		if (!confirm($(this).attr('title')))
 			return false;
 		else
@@ -66,7 +66,7 @@ jQuery(document).ready(function($) {
 
 	// ########## Notifications ##########
 
-	$('.nb-notification').css({
+	$('.gndev-plugin-notification').css({
 		cursor: 'pointer'
 	}).live('click', function(event) {
 		$(this).fadeOut(100, function() {
@@ -87,35 +87,35 @@ jQuery(document).ready(function($) {
 		//alert( name + ' - ' + index );
 
 		// Hide all related triggables
-		$('tr.nb-triggable[data-triggable^="' + name + '="]').hide();
+		$('tr.gndev-plugin-triggable[data-triggable^="' + name + '="]').hide();
 
 		// Show selected triggable
-		$('tr.nb-triggable[data-triggable="' + name + '=' + index + '"]').show();
+		$('tr.gndev-plugin-triggable[data-triggable="' + name + '=' + index + '"]').show();
 
 		$(this).change(function() {
 
 			index = $(this).find(':selected').index();
 
 			// Hide all related triggables
-			$('tr.nb-triggable[data-triggable^="' + name + '="]').hide();
+			$('tr.gndev-plugin-triggable[data-triggable^="' + name + '="]').hide();
 
 			// Show selected triggable
-			$('tr.nb-triggable[data-triggable="' + name + '=' + index + '"]').show();
+			$('tr.gndev-plugin-triggable[data-triggable="' + name + '=' + index + '"]').show();
 		});
 	});
 
 	// Radio
-	$('tr[data-trigger-type="radio"] .nb-radio-group').each(function(i) {
+	$('tr[data-trigger-type="radio"] .gndev-plugin-radio-group').each(function(i) {
 
 		var // Input data
 		name = $(this).find(':checked').attr('name'),
 		index = $(this).find(':checked').parent('label').parent('div').index();
 
 		// Hide all related triggables
-		$('tr.nb-triggable[data-triggable^="' + name + '="]').hide();
+		$('tr.gndev-plugin-triggable[data-triggable^="' + name + '="]').hide();
 
 		// Show selected triggable
-		$('tr.nb-triggable[data-triggable="' + name + '=' + index + '"]').show();
+		$('tr.gndev-plugin-triggable[data-triggable="' + name + '=' + index + '"]').show();
 
 		$(this).find('input:radio').each(function(i2) {
 
@@ -124,10 +124,10 @@ jQuery(document).ready(function($) {
 				alert();
 
 				// Hide all related triggables
-				$('tr.nb-triggable[data-triggable^="' + name + '="]').hide();
+				$('tr.gndev-plugin-triggable[data-triggable^="' + name + '="]').hide();
 
 				// Show selected triggable
-				$('tr.nb-triggable[data-triggable="' + name + '=' + i2 + '"]').show();
+				$('tr.gndev-plugin-triggable[data-triggable="' + name + '=' + i2 + '"]').show();
 			});
 		});
 	});
@@ -136,28 +136,28 @@ jQuery(document).ready(function($) {
 	// ########## Clickuts ##########
 
 	$(document).live('click', function(event) {
-		if ( $('.nb-prevent-clickout:hover').length == 0 )
-			$('.nb-clickout').hide();
+		if ( $('.gndev-plugin-prevent-clickout:hover').length == 0 )
+			$('.gndev-plugin-clickout').hide();
 	});
 
 
 	// ########## Icon picker ##########
 
 	// Textfield focus
-	$('.nb-icon-picker-value').focus(function(event) {
+	$('.gndev-plugin-icon-picker-value').focus(function(event) {
 
 		event.stopPropagation();
 
 		// Show dropdown
-		$(this).parent('.nb-icon-picker').children('.nb-icon-picker-dropdown').show();
+		$(this).parent('.gndev-plugin-icon-picker').children('.gndev-plugin-icon-picker-dropdown').show();
 	});
 
 	// Textfield blur
-	$('.nb-icon-picker-value').blur(function(event) {
+	$('.gndev-plugin-icon-picker-value').blur(function(event) {
 
 		event.stopPropagation();
 
-		var dropdown = jQuery(this).parent('.nb-icon-picker').children('.nb-icon-picker-dropdown');
+		var dropdown = jQuery(this).parent('.gndev-plugin-icon-picker').children('.gndev-plugin-icon-picker-dropdown');
 
 		// Hide dropdown
 		setTimeout(function() {
@@ -166,36 +166,36 @@ jQuery(document).ready(function($) {
 	});
 
 	// Preview icon
-	$('.nb-icon-picker-preview').click(function(event) {
+	$('.gndev-plugin-icon-picker-preview').click(function(event) {
 
 		event.stopPropagation();
 
-		$('.nb-icon-picker-dropdown').hide();
+		$('.gndev-plugin-icon-picker-dropdown').hide();
 
 		// Show dropdown
-		$(this).parent('.nb-icon-picker').children('.nb-icon-picker-dropdown').toggle();
+		$(this).parent('.gndev-plugin-icon-picker').children('.gndev-plugin-icon-picker-dropdown').toggle();
 	});
 
 	// Select icon
-	$('.nb-icon-picker-dropdown img').click(function(event) {
+	$('.gndev-plugin-icon-picker-dropdown img').click(function(event) {
 
 		event.stopPropagation();
 
 		// Copy image src to textfield
-		$(this).parent('.nb-icon-picker-dropdown').parent('.nb-icon-picker').children('.nb-icon-picker-value').val($(this).attr('src'));
+		$(this).parent('.gndev-plugin-icon-picker-dropdown').parent('.gndev-plugin-icon-picker').children('.gndev-plugin-icon-picker-value').val($(this).attr('src'));
 
 		// Copy image src to preview
-		$(this).parent('.nb-icon-picker-dropdown').hide().parent('.nb-icon-picker').children('.nb-icon-picker-preview').attr('src',$(this).attr('src'));
+		$(this).parent('.gndev-plugin-icon-picker-dropdown').hide().parent('.gndev-plugin-icon-picker').children('.gndev-plugin-icon-picker-preview').attr('src',$(this).attr('src'));
 	});
 
 	// ########## Upload buttons ##########
 
-	$('.nb-icon-picker-upload, .nb-upload-button').click(function(event) {
+	$('.gndev-plugin-icon-picker-upload, .gndev-plugin-upload-button').click(function(event) {
 
 		event.stopPropagation();
 
 		// Define upload field
-		window.nb_current_upload = $(this).attr('rel');
+		window.nbp_current_upload = $(this).attr('rel');
 
 		// Show thickbox with uploader
 		tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
@@ -208,13 +208,13 @@ jQuery(document).ready(function($) {
 		var url = jQuery('img',html).attr('src');
 
 		// Update upload textfield and icon-picker value
-		$('#nb-field-' + window.nb_current_upload).val(url);
+		$('#gndev-plugin-field-' + window.nbp_current_upload).val(url);
 
 		// Update icon-picker preview
-		$('.nb-icon-picker-preview[data-id="' + window.nb_current_upload + '"]').attr('src',url);
+		$('.gndev-plugin-icon-picker-preview[data-id="' + window.nbp_current_upload + '"]').attr('src',url);
 
 		// Hide icon-picker dropdown
-		$('.nb-icon-picker-dropdown').hide();
+		$('.gndev-plugin-icon-picker-dropdown').hide();
 
 		// Hide thickbox
 		tb_remove();
@@ -223,14 +223,14 @@ jQuery(document).ready(function($) {
 
 	// ########## Color picker ##########
 
-	$('.nb-color-picker-preview').each(function(index) {
+	$('.gndev-plugin-color-picker-preview').each(function(index) {
 		//var id = $(this).attr('data-picker-id');
 
-		$(this).farbtastic('.nb-color-picker-value:eq(' + index + ')');
+		$(this).farbtastic('.gndev-plugin-color-picker-value:eq(' + index + ')');
 
-		$('.nb-color-picker-value:eq(' + index + ')').focus(function(event) {
-			$('.nb-color-picker-preview').hide();
-			$('.nb-color-picker-preview:eq(' + index + ')').show();
+		$('.gndev-plugin-color-picker-value:eq(' + index + ')').focus(function(event) {
+			$('.gndev-plugin-color-picker-preview').hide();
+			$('.gndev-plugin-color-picker-preview:eq(' + index + ')').show();
 		});
 	});
 

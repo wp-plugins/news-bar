@@ -1,26 +1,25 @@
-=== News Bar ===
+=== News Bar Plus ===
 Contributors: gn_themes
 Donate link: http://gndev.info/
 Tags: wordpress, plugin, news, ticker, news ticker, news bar, twitter, social, social icons, icon, icons, bar, toolbar, news ticker
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 1.0.4
+Stable tag: 2.0.0
 
-News bar with latest tweets or posts from specified blog category
+News bar with latest tweets or posts from specified blog category. Extended version.
 
 
 == Description ==
 
-News bar with latest tweets or posts from specified blog category.
+News bar with latest tweets or posts from specified blog category. Extended version.
 
 = Features =
-* 5 different skins
-* Grab tweets or blog posts
+* Many skins
+* Grab tweets, blog posts, feeds or use your own news
 * Powerful control panel
 
 = Got a bug? =
-* [Support forum](http://wordpress.org/tags/news-bar?forum_id=10)
-* [Twitter](http://twitter.com/gn_themes)
+* [Author Twitter](http://twitter.com/gn_themes)
 
 = Translations =
 * Ru - [Vladimir Anokhin](http://gndev.info/)
@@ -43,11 +42,6 @@ Upgrade normally via your Wordpress admin -> Plugins panel.
 
 == Screenshots ==
 
-1. Screenshot 1.
-2. Screenshot 2.
-3. Screenshot 3.
-4. Screenshot 4.
-5. Screenshot 5.
 
 == Frequently Asked Questions ==
 
@@ -55,6 +49,9 @@ Upgrade normally via your Wordpress admin -> Plugins panel.
 
 
 == Changelog ==
+
+= 2.0.0 =
+* Extended version is now shared
 
 = 1.0.0 =
 * Initial release

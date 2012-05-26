@@ -1,19 +1,20 @@
 jQuery(document).ready(function($) {
 
-	nb_init_ticker();
+	nbp_init_ticker();
 
 });
 
 /*
  * Init news ticker
  */
-function nb_init_ticker() {
+function nbp_init_ticker() {
 
 	var // Define variables
-	ticker = jQuery('#news-bar-ticker'),
-	items = ticker.find('.news-bar-item'),
-	delay = parseInt( ticker.attr('data-news-bar-delay') ),
-	speed = parseInt( ticker.attr('data-news-bar-speed') );
+	ticker = jQuery('#news-bar-plus-ticker'),
+	items = ticker.find('.news-bar-plus-item'),
+	delay = parseInt( ticker.attr('data-news-bar-plus-delay') ),
+	speed = parseInt( ticker.attr('data-news-bar-plus-speed') ),
+	animation = ticker.attr('data-news-bar-plus-animation');
 
 	// Check number of items
 	if ( items.length > 1 ) {
@@ -29,16 +30,28 @@ function nb_init_ticker() {
 		var timer = setInterval( function() {
 
 			var // Get current and next item index
-			current = parseInt( ticker.find('.news-bar-item:visible').index() ),
+			current = parseInt( ticker.find('.news-bar-plus-item:visible').index() ),
 			next = ( ( current + 1 ) >= items.length ) ? 0 : current + 1;
 
-			//alert( current + ' - ' + next );
+			// Fade animation
+			if ( animation == 'fade' ) {
 
-			// Hide current tweet
-			items.eq(current).fadeOut(speed);
+				// Hide current tweet
+				items.eq(current).fadeOut(speed);
 
-			// Show next tweet
-			items.eq(next).delay( Math.round( speed / 2 ) ).fadeIn(speed);
+				// Show next tweet
+				items.eq(next).delay( Math.round( speed / 2 ) ).fadeIn(speed);
+			}
+
+			// Fade animation
+			else if ( animation == 'slide' ) {
+
+				// Hide current tweet
+				items.eq(current).slideUp(speed);
+
+				// Show next tweet
+				items.eq(next).slideDown(speed);
+			}
 		}, delay );
 	}
 }
